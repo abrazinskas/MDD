@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<survej:Survej
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:survej="http://survej/1.0"
+    xsi:schemaLocation="http://survej/1.0 Survej.ecore">
+  <contains/>
+  <contains
+      question="What is day time now?">
+    <has answer="Day"/>
+    <has answer="Night"/>
+    <has answer="Evening"/>
+  </contains>
+  <contains>
+    <has answer=""/>
+  </contains>
+</survej:Survej>
