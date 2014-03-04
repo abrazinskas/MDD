@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="survej" nsURI="http://survej/1.0" nsPrefix="survej">
-  <eClassifiers xsi:type="ecore:EClass" name="Survej">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
-        eType="#//TextQuestion" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
-        eType="#//RadioQuestion" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
-        eType="#//SelectQuestion" containment="true"/>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="survey" nsURI="http://survey/1.0" nsPrefix="survey">
+  <eClassifiers xsi:type="ecore:EClass" name="Survey">
     <eStructuralFeatures xsi:type="ecore:EReference" name="consists of" lowerBound="1"
-        upperBound="-1" eType="#//Question"/>
+        upperBound="-1" eType="#//Question" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextQuestion" eSuperTypes="#//Question"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadioQuestion" eSuperTypes="#//Question">
     <eStructuralFeatures xsi:type="ecore:EReference" name="has" lowerBound="1" upperBound="-1"
-        eType="#//Answer" containment="true"/>
+        eType="#//AnswerOption" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="other" lowerBound="1" eType="#//TextQuestion"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectQuestion" eSuperTypes="#//Question">
     <eStructuralFeatures xsi:type="ecore:EReference" name="has" lowerBound="1" upperBound="-1"
-        eType="#//Answer" containment="true"/>
+        eType="#//AnswerOption" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="" eType="#//SelectQuestion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="other" lowerBound="1" eType="#//TextQuestion"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="other" lowerBound="1" eType="#//TextQuestion"
-        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Answer">
+  <eClassifiers xsi:type="ecore:EClass" name="AnswerOption">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="answer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditional" lowerBound="1"
         eType="#//Question" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="" upperBound="-1" eType="#//SelectQuestion"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditional" upperBound="-1"
-        eType="#//RadioQuestion"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditional" upperBound="-1"
-        eType="#//RadioQuestion"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Question">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
