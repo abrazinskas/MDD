@@ -4,7 +4,7 @@
 
 *.pydevproject
 .project
-.metadata
+.metadata/
 bin/
 tmp/
 *.tmp
@@ -27,6 +27,7 @@ local.properties
 
 # PDT-specific
 .buildpath
+
 
 
 #################
